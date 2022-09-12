@@ -25,7 +25,6 @@ app.get('/songs',(req,res)=>{
   db('songgg')
   .select('title','lyric')
   .then(data=>{
-    console.log(data)
     res.json(data);
   }) 
   .catch(err=>console.log(err))
@@ -38,8 +37,16 @@ app.post('/del/:id',(req,res)=>{
   .then(data=>res.json(data))  
 })
 
-app.post('/songs?title=title&lyric=lyric',(req,res)=>{
-  return db('songgg')
-  .insert([{title:req.body.title},{lyric:req.body.lyric}])
-  .then(data=>res.json(data)) 
+app.post('/addSong',(req,res)=>{
+  const {songid, songtitle}=req.body;
+  console.log(req.body);
+   db('song')
+  .insert(req.body)
+  .returning('*')
+  .then(rows=>{
+    res.json(rows)
+  })
+  .catch(e=>{
+    console.log(e);
+  })
 })

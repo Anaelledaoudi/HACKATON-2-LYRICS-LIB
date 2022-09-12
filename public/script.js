@@ -1,6 +1,7 @@
 const btnSearch=document.getElementById('btnSearch');
 btnSearch.addEventListener('click',retrieveData);
-
+let globalSongId;
+let globalSongTitle;
 function retrieveData(){
     const search=document.getElementById('search').value;
     const singerNames=search.split(" ");
@@ -53,6 +54,8 @@ function happenedSingerSong(id,title,img){
 function getLyricaBySongId(evt){
 //id of the song
 console.log(evt.target);
+globalSongId=evt.target.id;
+globalSongTitle=evt.target.querySelector('p').innerText;
 const id=evt.target.id;
 console.log(id);
 
@@ -107,7 +110,7 @@ fetch(`https://genius-song-lyrics1.p.rapidapi.com/songs/${id}/lyrics`, options)
   // div.classList.add('dimScreen');
    const btn=document.createElement('btn');
    btn.innerText='Add Lyrics';
-   btn.addEventListener('click',addLyrics(songLyrics));
+   btn.addEventListener('click',addLyrics);
    div.appendChild(btn) ;
    document.body.appendChild(div);
  }
@@ -117,7 +120,39 @@ fetch(`https://genius-song-lyrics1.p.rapidapi.com/songs/${id}/lyrics`, options)
     evt.target.parentElement.remove();
  }
 //name on a colorful background and when click its redirect to another page with the lyrics
-function addLyrics(name){
+async function addLyrics(){
  //add to the sql post method
+ console.log('songId==>',globalSongId);
+ console.log('songTitle==>',globalSongTitle);
+
+  let obj={
+    songid:globalSongId,
+    songtitle:globalSongTitle
+  }
+  fetch('http://localhost:5000/addSong',{
+    method:'POST',
+    headers:{
+        'Content-Type':'application/json'
+    },
+    //because of this i'll get on the body
+    body:JSON.stringify(obj)
+    //same=> body:JSON.stringify({email,password})
+    //{msg:'ffff'}----->its an obj
+})
+//its the response i'll get from the server
+.then(res=>res.json())
+.then(data=>{
+    console.log(data)
+    if(data.msg='OK'){
+        window.location.href=''
+    }
+})
+.catch(e=>{
+    console.log(e);
+})
+
 }
+
+
+
 
