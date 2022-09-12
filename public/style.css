@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    background: rgb(171,132,196);
+    background: linear-gradient(90deg, rgba(171,132,196,1) 0%, rgba(250,127,127,1) 80%, rgba(247,194,119,1) 100%);
+}
+*{
+    font-family: 'Arima', cursive;
+}
+h1{
+    font-size: 4em;
+    /*color: #ff2d55;*/
+    color: rgb(234, 223, 223);
+    margin-left: 30%;
+    margin-bottom: 2px solid #ff2d55;
+    border-radius: 5px;
+
+}
+i{
+    color: red;
+}
+#firI{
+    color: #eb7b1f;
+    font-size: 2.5em;
+}
+#secI{
+    color: #af6ef5;
+    font-size: 1.7em;
+
+}
+#titleContainer{
+    display: flex;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    margin-bottom: 1em;
+}
+
+#search{
+    border: 2px solid rgb(234, 182, 26);
+    background-color: antiquewhite;
+    opacity: 0.2;
+    border-radius: 7px;
+    width: 35%;
+    margin-top: 5%;
+    margin-left:24%;
+    margin-bottom: 2%;
+}
+#grid-container{
+    display: grid;
+    grid-template-columns:repeat(3,2fr);
+    grid-template-rows: repeat(4,1fr);
+    gap: 2%;
+}
+#toLib{
+    color: rgb(234, 223, 223);
+    margin-left: 1em;
+    text-decoration: none;
+}
+#btnLib:hover{
+    background-color:#f19e5a;  
+}
+p{
+    color: rgb(234, 223, 223);
+    font-size: 0.9em;
+    margin: 0;
+}
+#icon{
+    color: rgb(234, 223, 223); 
+    margin: 0; 
+}
+#btnSearch{
+    background-color:rgba(253,29,29,1); 
+    color: rgb(234, 223, 223);
+    border-radius: 5px;
+    padding: 6px;
+    border: 2px solid rgba(253,29,29,1);
+}
+.imgStyle{
+    height: 300px;
+    background-repeat: no-repeat;
+}
+.title{
+    width: 70%;
+    font-size:1.5em;
+}
+.dimScreen{
+    position:absolute;
+    padding:0;
+    margin:0;
+    top:10%;
+    left: 15%;
+    width: 50%;
+    background-color:rgb(12, 11, 11);
+    opacity: 0.8;
+    border-radius: 20px;
+    padding: 8%;
+    color:rgb(233, 212, 212);
+    word-wrap: break-word;
+    text-decoration: none;
+    height: 60%;
+    overflow: auto;
+}
+.dimScreen  btn{
+    padding: 3%;
+    margin-top: 15px;
+    border: 2px solid rgb(233, 212, 212);
+    border-radius: 5px
+}
+.dimScreen  btn:hover{
+    background-color: rgb(233, 212, 212);
+    color: rgba(50, 48, 48, 0.866);
+}
+a{
+    color:rgb(233, 212, 212); 
+    text-decoration: none;
+}
+.lyrics{
+    color:rgb(233, 212, 212);
+}
+.iMy{
+    top:2%;
+    right:2%;
+    color:rgb(233, 212, 212);
+    font-size:1.6em;
+}

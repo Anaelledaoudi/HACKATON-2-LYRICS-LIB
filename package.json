@@ -1,0 +1,29 @@
+{
+  "name": "hackaton2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anaelledaoudi/HACKATON-2-LYRICS-LIB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anaelledaoudi/HACKATON-2-LYRICS-LIB/issues"
+  },
+  "homepage": "https://github.com/Anaelledaoudi/HACKATON-2-LYRICS-LIB#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "knex": "^2.2.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
